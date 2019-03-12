@@ -5,14 +5,15 @@ import "../../css/NavBar.css";
 
 export const NavBar = () => {
   return (
-    <div className="navbar">
+    <ul className="navbar">
       <div className="leftNav">
-        <Link to={"/"}>Home</Link>
-      </div>
+        <li><Link to={"/"}>Home</Link></li>
+        </div>
+
       <div className="rightNav">
-        <Link to="/movies">All Movies</Link>
-        <Link to="/byGenre">By Genre</Link>
+        <li><Link to="/movies">All Movies</Link></li>
+        <li><Link to="/byGenre">By Genre</Link></li>
       </div>
-    </div>
+    </ul>
   );
 };

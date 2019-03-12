@@ -16,9 +16,6 @@ app.use(bodyParser.json());
 app.use(cookieParser("never gonna give you up"));
 
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/movies', movies);
@@ -31,8 +28,8 @@ app.get('*', (req, res) => {
   res.send("There's an ERROR! Try again!")
 })
 
-app.listen(3001, () => {
-  console.log("Listening to port 3001");
+app.listen(3100, () => {
+  console.log("Listening to port 3100");
 });
 
 // catch 404 and forward to error handler

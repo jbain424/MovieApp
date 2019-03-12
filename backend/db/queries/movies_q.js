@@ -14,7 +14,7 @@ const getAllMovies = (req, res, next) => {
 }
 
 const getMovieById = (req, res, next) => {
-  let id = req.params.id
+  let id = parseInt(req.params.id)
   db.one('SELECT * FROM movies WHERE movies.id=$1', [id])
   .then(data => {
     console.log(data);

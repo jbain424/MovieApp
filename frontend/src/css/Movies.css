@@ -1,0 +1,13 @@
+.themovies {
+  font-family: dosis;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 100px;
+  height: 100px;
+  padding-top: 75px;
+  color: yellow;
+}
+
+.movieDisplay {
+  align-content: center;
+}

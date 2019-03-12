@@ -11,7 +11,7 @@ CREATE TABLE genres (
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   title VARCHAR NOT NULL,
-  genre_id INT,
+  genre_id INT REFERENCES genres(id),
   img_url VARCHAR
 );
 
@@ -23,7 +23,7 @@ CREATE TABLE ratings (
 --
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
-  comment VARCHAR NOT NULL,
+  comment TEXT,
   movie_id INT REFERENCES movies(id)
 
 );
