@@ -1,13 +1,24 @@
+.form {
+  display: flex;
+  justify-content: center;
+  padding-top: 75px;
+}
+
 .themovies {
   font-family: dosis;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  width: 100px;
-  height: 100px;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   padding-top: 75px;
-  color: yellow;
+  text-decoration: none;
+  justify-content: center;
+  grid-row-gap: 10px;
 }
 
-.movieDisplay {
-  align-content: center;
+.themovies a:active {
+  color: yellow;
+  text-decoration: none;
+}
+
+.themovies img, a {
+  width: 120px;
 }

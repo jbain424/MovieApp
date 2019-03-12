@@ -7,24 +7,25 @@ const Movies = props => {
   const { allMovies } = props;
   const getAllMovies = allMovies.map(movie => {
     return (
-      <div className="allmovies">
+      <div>
         <Link to={"/movies" + movie.id}>
           <img src={movie.img_url} />
+          <br/>
           {movie.title}
         </Link>
       </div>
     );
   });
   return (
-    <div className="movieDisplay">
-      <form onSubmit={props.handleSubmit}>
+    <div>
+      <form onSubmit={props.handleSubmit} className="form">
         <input
           onChange={props.handleChange}
           id="text"
           name="text"
           type="text"
           placeholder="Search by Title"
-          value={props.allMovies}
+          value=""
         />
         <input type="Submit" value="Search" />
       </form>
