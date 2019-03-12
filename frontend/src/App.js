@@ -5,20 +5,39 @@ import axios from "axios";
 import { NavBar } from "./components/Nav/NavBar.js";
 import Home from "./components/Home.js";
 import Movies from "./components/Movies.js";
+import OneMovie from "./components/OneMovie.js";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allMovies: []
+      allMovies: [],
+      oneMovie: []
     };
   }
-  componentDidMount() {
+
+  getAllMovies = () => {
     axios.get("/movies").then(response => {
       this.setState({
         allMovies: response.data.data
       });
     });
+  };
+
+  getOneMovie = (id) => {
+    axios.get("/movies/" + id)
+      .then(response => {
+        this.setState({
+          oneMovie: response.data.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  componentDidMount() {
+    this.getAllMovies();
   }
 
   handleSubmit = event => {
@@ -26,9 +45,8 @@ class App extends React.Component {
   };
 
   handleChange = event => {
-    console.log(event);
     this.setState({
-      [event.target.name]: event.target.value
+      allMovies: event.target.value
     });
   };
 
@@ -42,6 +60,12 @@ class App extends React.Component {
             path="/movies"
             render={props => (
               <Movies {...props} allMovies={this.state.allMovies} />
+            )}
+          />
+          <Route
+            path="/movies/:id"
+            render={props => (
+              <OneMovie {...props} oneMovie={this.state.oneMovie} />
             )}
           />
         </Switch>

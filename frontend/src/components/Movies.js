@@ -8,8 +8,8 @@ const Movies = props => {
   const getAllMovies = allMovies.map(movie => {
     return (
       <div>
-        <Link to={"/movies" + movie.id}>
-          <img src={movie.img_url} />
+        <Link to={"/movies/" + movie.id}>
+          <img src={movie.img_url} alt="" />
           <br/>
           {movie.title}
         </Link>
@@ -20,7 +20,6 @@ const Movies = props => {
     <div>
       <form onSubmit={props.handleSubmit} className="form">
         <input
-          onChange={props.handleChange}
           id="text"
           name="text"
           type="text"
