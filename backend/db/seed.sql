@@ -17,13 +17,13 @@ CREATE TABLE movies (
 
 CREATE TABLE ratings (
   id SERIAL PRIMARY KEY,
-  stars INT,
+  stars INT NOT NULL CHECK (stars between 1 and 5),
   movie_id INT REFERENCES movies(id)
 );
 --
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
-  comment TEXT,
+  comment VARCHAR NOT NULL,
   movie_id INT REFERENCES movies(id)
 
 );
