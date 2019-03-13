@@ -20,7 +20,7 @@ CREATE TABLE ratings (
   stars INT NOT NULL CHECK (stars between 1 and 5),
   movie_id INT REFERENCES movies(id)
 );
---
+
 CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   comment VARCHAR NOT NULL,

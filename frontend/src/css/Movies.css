@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   padding-top: 75px;
+
 }
 
 .themovies {
@@ -11,7 +12,9 @@
   padding-top: 75px;
   text-decoration: none;
   justify-content: center;
-  grid-row-gap: 10px;
+  grid-row-gap: 20px;
+  width: 50%;
+  padding-left: 25%;
 }
 
 .themovies a:active {
@@ -21,4 +24,9 @@
 
 .themovies img, a {
   width: 120px;
+}
+
+.themovies a:visited {
+  color: yellow;
+  text-decoration: none;
 }
