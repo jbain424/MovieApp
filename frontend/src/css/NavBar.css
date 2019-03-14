@@ -3,54 +3,27 @@
   border-width: 1px 0;
   list-style: none;
   margin: 0;
-  padding: 0;
-  background-color: darkblue;
-  height: 75px;
-  font-family: dosis;
+  background-color: black;
+  height: 50px;
+  border-style: none;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding-top: 30px;
+
+}
+
+.links a:link {
   font-size: 20px;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  border-style: none;
-}
-
-
-.leftNav {
+  letter-spacing: 1px;
+  font-family: 'Saira Extra Condensed', sans-serif;
   color: white;
-  text-align: left;
-  padding-left: 30px;
-}
-.leftNav a:link {
   text-decoration: none;
-  color: white;
-  border-style: none;
-}
-.leftNav a:visited {
-  color: white;
-}
-
-.rightNav {
-  color: white;
-  text-align: right;
-  padding-right: 30px;
-    padding-top: 15px;
 
 }
 
-.rightNav a:link {
+.links a:visited {
   text-decoration: none;
-  color: white;
-  padding: 10px 10px 10px 10px;
-}
-
-.rightNav a:visited {
-  color: white;
-}
-
-.navbar li {
-  display: inline;
-}
-.navbar a {
-  display: inline-block;
-  padding: 10px;
-  padding-top: 25px;
+  color: #929292;
 }

@@ -1,0 +1,27 @@
+.onePage {
+  display: grid;
+  grid-auto-columns: 40% 60%;
+  grid-column-gap: 15px;
+  width: 800px;
+  padding-left: 250px;
+  padding-top: 100px;
+}
+
+.movieTitle {
+  grid-column: 1;
+  color: black;
+  font-size: 40px;
+  font-family: 'Archivo Black', sans-serif;
+
+}
+
+.movieImg {
+  grid-column: 2;
+}
+
+.comments {
+  grid-column: 1;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 20px;
+  text-align: justify;
+}

@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllComments } = require("../db/queries/comments_q.js");
+const { getAllComments, getCommentsById } = require("../db/queries/comments_q.js");
 
 router.get("/", getAllComments);
+router.get('/:id', getCommentsById)
 
 module.exports = router;

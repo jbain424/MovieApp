@@ -1,73 +1,19 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import axios from "axios";
 
 import { NavBar } from "./components/Nav/NavBar.js";
 import Home from "./components/Home.js";
-import Movies from "./components/Movies.js";
-import OneMovie from "./components/OneMovie.js";
+import Movies from "./components/Movies/Movies.js";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      allMovies: [],
-      oneMovie: []
-    };
-  }
 
-  getAllMovies = () => {
-    axios.get("/movies").then(response => {
-      this.setState({
-        allMovies: response.data.data
-      });
-    });
-  };
-
-  getOneMovie = (id) => {
-    axios.get("/movies/" + id)
-      .then(response => {
-        this.setState({
-          oneMovie: response.data.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
-  componentDidMount() {
-    this.getAllMovies();
-  }
-
-  handleSubmit = event => {
-    event.preventDefault();
-  };
-
-  handleChange = event => {
-    this.setState({
-      allMovies: event.target.value
-    });
-  };
-
+class App extends Component {
   render() {
     return (
       <div className="App">
         <NavBar />
         <Switch>
-          <Route exact path={"/"} component={Home} />
-          <Route
-            path="/movies"
-            render={props => (
-              <Movies {...props} allMovies={this.state.allMovies} />
-            )}
-          />
-          <Route
-            path="/movies/:id"
-            render={props => (
-              <OneMovie {...props} oneMovie={this.state.oneMovie} />
-            )}
-          />
+          <Route exact path="/" component={Home}/>
+          <Route path="/movies" component={Movies}/>
         </Switch>
       </div>
     );
