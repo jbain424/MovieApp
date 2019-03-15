@@ -51,13 +51,12 @@ class Movies extends Component {
     });
   };
 
-  getGenre = id => {
-    axios.get("/genres/" + id + "/movies").then(response => {
-      debugger;
+  getGenre = () => {
+    axios.get("/genres").then(response => {
       this.setState({
-        genres: response.data.data
+        genres: response.data.genres
       });
-    })
+    });
   };
 
   handleMovieChange = event => {

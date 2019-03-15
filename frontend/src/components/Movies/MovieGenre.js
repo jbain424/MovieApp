@@ -9,7 +9,7 @@ class MovieGenre extends React.Component {
   };
 
   componentDidMount() {
-    this.getGenre(this.props.match.params.id);
+    this.props.getGenre();
   }
 
   handleSelect = event => {
@@ -28,22 +28,25 @@ class MovieGenre extends React.Component {
 
   render() {
     const { genreSelect, formSubmitted } = this.state;
-    const { movies, genres } = this.props;
+    const { movies, genres, getGenre } = this.props;
 
     const movieFilter = movies;
+
     if (formSubmitted && genreSelect) {
+      debugger
       movieFilter = movies.filter(movie => {
         return movie.genres === genreSelect;
       });
     }
+
     const movieList = movieFilter.map(movie => {
-      return <li key={movie.id}>{movie.title}</li>;
+      return <li key={movie.id}>{movie.title}<img src={movie.img_url} alt=""/> </li>;
     });
 
     const genreList = genres.map((genre, i) => {
       return (
         <option key={i + 1} value={genre}>
-          {genre}
+          {genre.name}
         </option>
       );
     });
@@ -58,7 +61,7 @@ class MovieGenre extends React.Component {
           </select>
           <button type="submit">Find Movies</button>
         </form>
-        <ul></ul>
+        <ul>{movieList}</ul>
       </>
     );
   }

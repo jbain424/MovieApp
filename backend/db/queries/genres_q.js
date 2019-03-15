@@ -27,4 +27,9 @@ const getMoviesByGenreId = (req, res, next) => {
     .catch(err => next(err));
 };
 
+const getMoviesbyGenre = (req, res, next) => {
+  db.any("SELECT title, img_url, stars, name FROM movies JOIN comments ON comments.movie_id = movies.id JOIN ratings ON ratings.movie_id = movies.id JOIN genres ON genres.id = movies.genre_id")
+}
+
+
 module.exports = { getAllGenres, getMoviesByGenreId };
